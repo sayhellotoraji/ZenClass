@@ -1,0 +1,445 @@
+		Introduction to Java
+
+Task 1: 20-10-23
+Rajasekar T
+
+Questions:
+
+1. Input 4 integers a, b, c, d & check if sum(a+b) is greater than sum(c+d) and print the output.
+
+Input:
+4
+3
+2
+1
+
+Output:
+
+a + b: 7 is greater than c + d: 3
+
+Execution Time:
+
+0.107s
+
+Memory Used:
+
+12912kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner obj = new Scanner(System.in);
+        
+        // Read a, b, c, d as Integer
+        int a = obj.nextInt();
+        int b = obj.nextInt();
+        int c = obj.nextInt();
+        int d = obj.nextInt();
+        
+        //Sum of a+b & Sum of c+default
+        int sum1 = a+b;
+        int sum2 = c+d;
+        
+        // Check if sum1 or sum2 is greater and print the output
+        
+        if(sum1>sum2)
+            System.out.println("a + b: "+ sum1 +" is greater than c + d: "+sum2);
+        
+        else if(sum2>sum1)
+            System.out.println("c + d: "+ sum2 +" is greater than a + b: "+sum1);
+            
+        else
+            System.out.println("a + b: "+ sum1 +" is equal to c + d: "+sum2);
+        
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+2. Check if an Integer is even Number.
+
+Input:
+24
+
+
+Output:
+
+24 is Even
+
+Execution Time:
+
+0.112s
+
+Memory Used:
+
+12504kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int userInput = obj.nextInt();
+        
+        // When a number on modulous by 2 gives remainder 0 - then it is even else odd
+        if(userInput % 2 ==0)
+            System.out.println(userInput+ " is Even");
+        
+        else
+            System.out.println(userInput+ " is Odd");
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+3. Print Alphabets from A - Z
+
+Input:
+26
+
+Output:
+
+A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z  
+
+Execution Time:
+
+0.108s
+
+Memory Used:
+
+12556kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int no_of_alphabets = obj.nextInt();
+        // Java Uses Unicode Character System
+        // In Unicode 65-90 denotes A-Z
+        for(int i=65;i<(65+no_of_alphabets);i++)
+        {
+            // Explicit type cast: Converting integer value to character
+            char ch = (char)i;
+            
+            // Printing the alphabets in a single line
+            System.out.print(ch+"  ");
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+4. Swap 2 Integers using Temporary Variable
+
+Input:
+50
+100
+
+Output:
+
+Before Swap: 
+First Number:  50, Second Number:  100
+After Swap: 
+First Number:  100, Second Number:  50
+
+Execution Time:
+
+0.106s
+
+Memory Used:
+
+12764kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        // Swap 2 Numbers 
+        int input1 = obj.nextInt();
+        int input2 = obj.nextInt();
+        System.out.println("Before Swap: ");
+        System.out.println("First Number:  "+input1+", Second Number:  "+input2);
+        // Use the temporary variable to swap the 2 Numbers
+        int temp = input1;
+        input1 = input2;
+        input2 = temp;
+        
+        System.out.println("After Swap: ");
+        System.out.println("First Number:  "+input1+", Second Number:  "+input2);
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+5. Write a Program to check a number is Prime or not
+
+Input:
+29
+
+
+Output:
+
+29 is Prime
+
+Execution Time:
+
+0.1s
+
+Memory Used:
+
+12848kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int userInput = obj.nextInt();
+        // flag is a counter to Check if the number is Prime or Not
+        // if flag==1 then number is not prime
+        int flag=0;
+        // Check if userInput is divisible by any number below it
+        // If it is divisible then it is not Prime number
+        for(int i=2;i<userInput;i++){
+            if(userInput%i==0)
+                {
+                    flag=1;
+                    break;
+                }
+        }
+                
+        if(flag==1)
+            System.out.println(userInput+" is not Prime");
+        
+        else
+            System.out.println(userInput+" is Prime");
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+6. Find the Factorial of a given integer
+
+Input:
+5
+
+Output:
+
+Factorial of 5! = 120
+
+Execution Time:
+
+0.108s
+
+Memory Used:
+
+12732kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        // Print the Factorial of a Number
+        Scanner obj = new Scanner(System.in);
+        int userInput = obj.nextInt();
+        
+        int fact = 1;
+        // Use a for loop to find the product of all the numbers from 1 upto the userInput and store in fact
+        for(int i=1;i<=userInput;i++)
+            fact*=i;
+        System.out.println("Factorial of "+userInput+"! = "+fact);
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+7.  Write a program to print the length of the given string
+
+Input:
+Guvi Geek
+
+Output:
+
+Length of the given string: 9
+
+Execution Time:
+
+0.103s
+
+Memory Used:
+
+12712kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        String userInput = obj.nextLine();
+        // Use of the string in-built method length - it calculates each character along with spaces
+        System.out.println("Length of the given string: "+userInput.length());
+    }
+} 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+8.Print "Welcome to Guvi" 10 times
+
+Input:
+Welcome to Guvi
+10 
+
+Output:
+
+Welcome to Guvi -- 1
+Welcome to Guvi -- 2
+Welcome to Guvi -- 3
+Welcome to Guvi -- 4
+Welcome to Guvi -- 5
+Welcome to Guvi -- 6
+Welcome to Guvi -- 7
+Welcome to Guvi -- 8
+Welcome to Guvi -- 9
+Welcome to Guvi -- 10
+
+Execution Time:
+
+0.115s
+
+Memory Used:
+
+12992kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        // Read the String which needs to be displayed
+        String userInput = obj.nextLine();
+        // Read number of times the string should display
+        int times = obj.nextInt();
+        
+        // Use For loop to print the string n times
+        for(int i=0;i<times;i++)
+            System.out.println(userInput+" -- "+(i+1));
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+9. Check if a Person is Senior Citizen or Not
+
+Input:
+Ram
+65
+60
+
+Output:
+
+Ram is a Senior Citizen
+
+Execution Time:
+
+0.089s
+
+Memory Used:
+
+12360kb
+
+
+Code:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        // Check if the Person is Senior Citizen or not
+        Scanner obj = new Scanner(System.in);
+        // Name of the Person
+        String name = obj.nextLine();
+        // Age of the person
+        int age = obj.nextInt();
+        
+        
+        // Age limit is 60 & above which is taken as input
+        int eligibility = obj.nextInt();
+        
+        if(age>=eligibility)
+        System.out.println(name+" is a Senior Citizen");
+        
+        else
+        System.out.println(name+" is not a Senior Citizen");
+        
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+10. Print number of digits in a given number
+
+Input:
+12345
+
+Output:
+
+Number: 12345 contains 5 digits.
+
+Execution Time:
+
+0.11s
+
+Memory Used:
+
+12740kb
+
+
+Code:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        // Count the Number of Digits in a Number
+        Scanner obj = new Scanner(System.in);
+        int number = obj.nextInt();
+        // Store the number in original
+        int original = number; 
+        // Use variable count to store the digits count.
+        int count = 0;
+        
+        // Use while loop to extract each digit and increment the count varible by 1 
+        // until the number is trimmed to 0
+        while(number>0){
+            // Extract the digits
+            int temp = number%10;
+            count++;
+            // Trim the last digit at every iteration
+            number = number/10;
+        }
+        System.out.println("Number: "+original+" contains "+count+" digits.");
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------
